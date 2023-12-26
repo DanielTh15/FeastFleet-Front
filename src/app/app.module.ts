@@ -6,12 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
+import { RestaurantComponent } from './components/restaurant/restaurant.component';
+import { RestaurantsComponent } from './components/restaurants/restaurants.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ImgComponent } from './components/img/img.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    RestaurantComponent,
+    RestaurantsComponent,
+    FooterComponent,
+    ImgComponent
   ],
   imports: [
     BrowserModule,
