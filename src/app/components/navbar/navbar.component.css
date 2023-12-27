@@ -1,7 +1,7 @@
 nav{
     display: flex;
     width: 100%;
-    background: #f1eeee;
+    background-color: rgba(0, 0, 0, 0.988);
     position: relative;
     justify-content: space-between;
     text-align: center;
@@ -30,7 +30,7 @@ nav ol li{
 }
 
 nav ol li a{
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 20px;
     text-decoration: none;
     text-transform: capitalize;
@@ -43,7 +43,7 @@ nav .icon{
     align-items: center;
     padding: 10px;
     font-size: 25px;
-    color: #000000;
+    color: #fcfafa;
     cursor: pointer;
 }
 
@@ -77,6 +77,8 @@ nav .search-box input{
     padding: 0 10px;
     font-size: 20px;
     width: 350px;
+    border-radius:10px 0 0 10px;
+
 }
 
 nav .search-box span{

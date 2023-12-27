@@ -8,6 +8,8 @@ import { Restaurant } from 'src/app/models/restaurant.model';
 })
 export class RestaurantComponent {
 
+  mostrarInfo = false;
+
   @Input() restaurant: Restaurant = {
     restaurantId: '',
     name: '',
@@ -18,6 +20,16 @@ export class RestaurantComponent {
     category: {
       name: ''
     }
+  }
+
+  mostrarSeleccion(){
+    this.mostrarInfo =true;
+
+  }
+
+  cerrar(){
+    this.mostrarInfo = false;
+
   }
 
 

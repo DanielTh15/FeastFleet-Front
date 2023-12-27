@@ -1,0 +1,290 @@
+
+.container {
+    height: 500px;
+    max-width: 1500px;  
+    background-image: url('../../../assets/Publicidad-para-un-restaurante.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+}
+
+.back{
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    padding-top: 100px;
+    background-color: rgba(0, 0, 0, 0.600);
+    margin-left: 0;
+    margin-right: 0;
+    
+}
+
+
+.container .back h2{
+    padding: 20px;
+    font-size: 60px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.back p {
+    text-align: justify;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+
+.btn-1 {
+    display: inline-block;
+    padding: 15px 35px;
+    border: 2px solid red;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-right: 20px;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.636) ;
+    cursor: pointer;
+}
+
+.btn-1 a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-1:hover {
+    background-color: red;
+    color: rgb(250, 249, 249);
+
+
+}
+
+.slaider-img{
+    width: 50%;
+    margin-left: 30px;
+    background-image: url("../../../assets/photo-1517248135467-4c7edcad34c4.webp");
+}
+
+.restaurantes{
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+
+}
+
+.mostrador{
+    width: 100%;
+    transition: .5s ease;
+}
+
+.mostrador .fila{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.mostrador .fila .item{
+    height: 300px;
+    text-align: center;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: .3s;
+    border: 2px solid;
+}
+
+.mostrador .fila .item:hover{
+    border-color: #f85151;
+    transform: scale(1.1)
+}
+
+.mostrador .fila .item .contenetor-foto {
+ 
+    
+    padding-bottom: 10px;
+
+}
+
+.mostrador .fila .item .contenetor-foto img {
+    border-radius: 10px 10px 0 0 ;
+}
+
+.mostrador .fila .item:hover{
+    background-color: #e6e6e6;
+}
+
+.mostrador .fila .item img{
+    width: 100%;
+}
+
+.mostrador .fila .item .descripcion {
+    color: #707070;
+    font-weight: bold;
+}
+
+.mostrador .fila .item .conten{
+    display: flex;
+    flex-direction: column;
+}
+
+.mostrador .fila .item .direccion{
+    color: #f85151 ;
+    font-weight: bold;
+
+}
+
+.seleccion{
+    transition: .5s ease;
+    width: 60%;
+    border: 1px solid #ccc;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 50%;
+    z-index: 1;
+    background-color: #fff;
+    transition: opacity .5s ease, width 1s ease;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 10px;
+    box-shadow: 1px;
+}
+
+.cerrar{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    transition: transform 0.3s ease;
+
+
+    cursor: pointer;
+    color: rgb(238, 10, 10);
+   
+}
+.cerrar:hover{
+transform: scale(1.5);}
+
+
+.info img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 200px;
+
+}
+.info .btn{
+
+    padding: 15px 15px;
+    margin-right: 20px;
+    border-radius: 50px;
+    background-color: rgba(174, 213, 234, 0.636) ;
+    cursor: pointer;
+}
+
+.info .btn:hover{
+    background: violet;
+}
+
+.info .caja{
+  
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info .caja .columna1 {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: center;
+}
+
+    
+
+.info .caja .columna1 li{
+    text-decoration: none;
+    list-style: none;
+    align-items: center;
+}
+.info .caja .columna2 ul li{
+    list-style: none;
+    text-decoration: none;
+
+}
+
+.info .comentarios{
+    padding-top: 10px;
+    margin: 10px;
+}
+.info .comentarios h3{
+    font-size: 20px;
+    font-weight: 500;
+    border-bottom: 1px solid black;
+}
+.info .comentarios span{
+    color: rgb(0, 0, 0) ;
+}
+.info .comentarios p {
+    text-align: justify;
+    padding: 5px;
+}
+.info .comentarios .ingresar-comentario {
+    border-top: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.info .comentarios .ingresar-comentario input {
+    width: 85%;
+    height: 40px;
+    border-radius: 10px;
+    border: .7px solid;
+    text-align: center;
+}
+
+.info .comentarios .ingresar-comentario button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgb(131, 217, 234);
+    border: none;
+    font-size: 13px;
+   
+}
+
+.info .comentarios .ingresar-comentario button img{
+    width: auto;
+    height: auto;
+}
+
+.info .comentarios .ingresar-comentario button:hover{
+    background: violet;
+
+}
+
+.text {
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+
+}
