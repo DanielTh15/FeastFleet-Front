@@ -9,44 +9,22 @@ import { RestaurantServiceService } from 'src/app/services/restaurant-service.se
 })
 export class RestaurantComponent implements OnInit {
 
-  listRestaurant: Restaurant[] = [];
-
-  constructor(private service: RestaurantServiceService) {
-
-  }
-
 
   ngOnInit(): void {
-    this.list();
-
-
-    this.listRestaurant.forEach(res => {
-      const indice = Math.floor(Math.random() * res.image.length);
-      res.randomImage = res.image[indice].imageUrl;
-    })
-  }
-
+    console.log(this.restaurants);
+    }
 
   mostrarInfo = false;
 
   mostrarReserva = false;
 
-   /* @Input() restaurant: Restaurant = {
-    restaurantId: '',
-    name: '',
-    cookType: '',
-    address: '',
-    description: '',
-    calification: 0,
-    categories: [
-      {
-        category: {
-          id: 0,
-          name: ''
-        }
-      }
-    ]
-  };*/
+// En el componente hijo (RestaurantComponent)
+@Input() restaurants: Restaurant[] = [];
+
+setRestaurants(restaurants: Restaurant[]) {
+  this.restaurants = restaurants;
+}
+   
 
   mostrarSeleccion() {
     this.mostrarInfo = true;
@@ -66,20 +44,6 @@ export class RestaurantComponent implements OnInit {
   cerrarRerseva() {
     this.mostrarReserva = false;
   }
-  list() {
-    this.service.all().subscribe(res => {
-      if (res) {
-        this.listRestaurant = res.map(item => {
-          // Inicializar propiedades para evitar errores de "undefined"
-          item.randomImage = item.image.length > 0 ? item.image[0].imageUrl : '';
-          return item;
-        });
-      }
-    });
-  }
-
-
-
 
 
 }
