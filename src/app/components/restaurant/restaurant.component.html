@@ -1,165 +1,46 @@
-<div class="container">
-    <div class="back">
-        <h2><span style="color: orange;">Feast</span>-Fleet</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem praesentium ea quibusdam molestias.
-            Eum,
-            obcaecati ad! Fuga nobis inventore facere veritatis ipsam ab dignissimos necessitatibus, quaerat saepe illum
-            laudantium molestiae!</p>
-        <div class="botones">
-            <div class="btn-1">
-                <a href="#">Make your reservation</a>
-            </div>
-            <div class="btn-1">
-                <a href="#">view all restaurant</a>
-
-            </div>
-        </div>
-    </div>
-
-</div>
-
 <div class="text">
     <h2>All restaurant</h2>
-
 </div>
 <div class="restaurantes">
     <div class="mostrador" id="mostrador">
-        <div class="fila">
-            <div class="item" (click)="mostrarSeleccion()">
-                <div class="contenetor-foto">
-                    <img src="../../../assets/pexels-photo-262047.jpeg" alt="">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let items of listRestaurant">
+                <div class="item" (click)="mostrarSeleccion()">
+                    <div class="contenetor-foto" *ngIf="items.image != null">
+                        <img [src]="items.randomImage || '../../../assets/imagenDefault.jpg'" alt="">
+                    </div>
+                    <div class="informacion">
+                        <div class="info-1">
+                            <span class="name">{{items.name}}</span>
+                            <span>
+
+                                <li class="fa-regular fa-star"></li>
+
+                                {{items.calification}}/5
+
+                            </span>
+                        </div>
+                        <div class="info-2">
+                            <span class="direccion">{{items.description}}</span><br>
+                            <span class="tipo-cocina">
+                             {{items.cookType}}
+                            </span>
+                        </div>
+                    </div>
                 </div>
 
-                    <a href="" class="descripcion">Nombre Restaurante</a><br>
-                    <span class="direccion">Direccion</span><br>
-                    <span class="tipo-cocina">Tipo de cocina</span>
-
-
-            </div>
-            
-            <div class="item">
-                <div class="contenetor-foto">
-                    <img src="../../../assets/pexels-photo-262047.jpeg" alt="">
-                </div>
-                    <a href="" class="descripcion">Nombre Restaurante</a><br>
-                    <span class="direccion">Direccion</span><br>
-                    <span class="tipo-cocina">Tipo de cocina</span>
-            </div>
-
-             <div class="item">
-                <div class="contenetor-foto">
-                    <img src="../../../assets/pexels-photo-262047.jpeg" alt="">
-                </div>
-                    <a href="" class="descripcion">Nombre Restaurante</a><br>
-                    <span class="direccion">Direccion</span><br>
-                    <span class="tipo-cocina">Tipo de cocina</span>
             </div>
 
 
-                <div class="item">
-                <div class="contenetor-foto">
-                    <img src="../../../assets/pexels-photo-262047.jpeg" alt="">
-                </div>
-                    <a href="" class="descripcion">Nombre Restaurante</a><br>
-                    <span class="direccion">Direccion</span><br>
-                    <span class="tipo-cocina">Tipo de cocina</span>
-            </div>
         </div>
 
-        <div class="fila">
-            <div class="item" (click)="mostrarSeleccion()">
-                <div class="contenetor-foto">
-                    <img src="../../../assets/pexels-photo-262047.jpeg" alt="">
-                </div>
-
-                    <a href="" class="descripcion">Nombre Restaurante</a><br>
-                    <span class="direccion">Direccion</span><br>
-                    <span class="tipo-cocina">Tipo de cocina</span>
 
 
-            </div>
-            
-            <div class="item">
-                <div class="contenetor-foto">
-                    <img src="../../../assets/pexels-photo-262047.jpeg" alt="">
-                </div>
-                    <a href="" class="descripcion">Nombre Restaurante</a><br>
-                    <span class="direccion">Direccion</span><br>
-                    <span class="tipo-cocina">Tipo de cocina</span>
-            </div>
-
-             <div class="item">
-                <div class="contenetor-foto">
-                    <img src="../../../assets/pexels-photo-262047.jpeg" alt="">
-                </div>
-                    <a href="" class="descripcion">Nombre Restaurante</a><br>
-                    <span class="direccion">Direccion</span><br>
-                    <span class="tipo-cocina">Tipo de cocina</span>
-            </div>
-
-
-                <div class="item">
-                <div class="contenetor-foto">
-                    <img src="../../../assets/pexels-photo-262047.jpeg" alt="">
-                </div>
-                    <a href="" class="descripcion">Nombre Restaurante</a><br>
-                    <span class="direccion">Direccion</span><br>
-                    <span class="tipo-cocina">Tipo de cocina</span>
-            </div>
-        </div>
-        <div class="fila">
-            <div class="item" (click)="mostrarSeleccion()">
-                <div class="contenetor-foto">
-                    <img src="../../../assets/pexels-photo-262047.jpeg" alt="">
-                </div>
-
-                    <a href="" class="descripcion">Nombre Restaurante</a><br>
-                    <span class="direccion">Direccion</span><br>
-                    <span class="tipo-cocina">Tipo de cocina</span><br>
-                    <span>
-                        <li class="fa-regular fa-star"></li>
-                        <li class="fa-regular fa-star"></li>
-                        <li class="fa-regular fa-star"></li>
-                        <li class="fa-regular fa-star"></li>
-                        <li class="fa-regular fa-star"></li>
-
-                    </span>
-
-
-            </div>
-            
-            <div class="item">
-                <div class="contenetor-foto">
-                    <img src="../../../assets/pexels-photo-262047.jpeg" alt="">
-                </div>
-                    <a href="" class="descripcion">Nombre Restaurante</a><br>
-                    <span class="direccion">Direccion</span><br>
-                    <span class="tipo-cocina">Tipo de cocina</span>
-            </div>
-
-             <div class="item">
-                <div class="contenetor-foto">
-                    <img src="../../../assets/pexels-photo-262047.jpeg" alt="">
-                </div>
-                    <a href="" class="descripcion">Nombre Restaurante</a><br>
-                    <span class="direccion">Direccion</span><br>
-                    <span class="tipo-cocina">Tipo de cocina</span>
-            </div>
-
-
-                <div class="item">
-                <div class="contenetor-foto">
-                    <img src="../../../assets/pexels-photo-262047.jpeg" alt="">
-                </div>
-                    <span class="descripcion">Nombre Restaurante</span><br>
-                    <span class="direccion">Direccion</span><br>
-                    <span class="tipo-cocina">Tipo de cocina</span>
-            </div>
-        </div>
     </div>
 
 
-    <div class="seleccion" id="seleccion" *ngIf="mostrarInfo">
+
+    <div class="seleccion" *ngIf="mostrarInfo">
         <div class="cerrar" (click)="cerrar()">
             &#x2715;
         </div>
@@ -195,20 +76,20 @@
                 </div>
 
             </div>
-            <button class="btn">Reserva Aqui</button>
+            <button class="btn" (click)="mostrarFormReserva()">Reserva Aqui</button>
 
             <div class="comentarios">
                 <h3>Comentarios de clientes</h3>
                 <span>Nombre del cliente</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Nihil reiciendis voluptates asperiores, aspernatur eum sequi fuga non, 
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nihil reiciendis voluptates asperiores, aspernatur eum sequi fuga non,
                     aliquid optio eligendi voluptate necessitatibus veritatis illum.
-                     Consequuntur voluptates nesciunt magni aperiam omnis!</p>
+                    Consequuntur voluptates nesciunt magni aperiam omnis!</p>
 
-                     <div class="ingresar-comentario">
-                        <input type="" placeholder="Ingrese un nuevo comentario">
-                        <button class="guardar"><img src="../../../assets/send.svg" alt=""></button>
-                     </div>
+                <div class="ingresar-comentario">
+                    <input type="" placeholder="Ingrese un nuevo comentario">
+                    <button class="guardar"><img src="../../../assets/send.svg" alt=""></button>
+                </div>
 
             </div>
 
@@ -217,6 +98,32 @@
     </div>
 
 
+</div>
 
+<div class="overlay" *ngIf="mostrarReserva">
+    <div class="reserva" *ngIf="mostrarReserva">
+        <div class="contenedor">
+            <div class="cerrar-reserva" (click)="cerrarRerseva()">
 
+            </div>
+            <span>Realize su reserva</span>
+            <div class="row fecha">
+                <div class="col-6">
+                    <label for="">Ingrese la fecha</label>
+                    <input type="date" name="" id="">
+                </div>
+                <div class="col-6">
+                    <label for="">Ingrese la Hora</label>
+                    <input type="time" name="" id="">
+                </div>
+                <div class="row comensales">
+                    <label for="">Escriba el numero de comesales</label>
+                    <input type="number" name="" id="">
+                </div>
+            </div>
+            <button>Guardar</button>
+
+        </div>
+
+    </div>
 </div>

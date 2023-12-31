@@ -10,6 +10,15 @@ import { RestaurantComponent } from './components/restaurant/restaurant.componen
 import { RestaurantsComponent } from './components/restaurants/restaurants.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ImgComponent } from './components/img/img.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SubNavComponent } from './components/sub-nav/sub-nav.component';
+import { RestaurantPAComponent } from './components/restaurant-pa/restaurant-pa.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 @NgModule({
   declarations: [
@@ -19,12 +28,21 @@ import { ImgComponent } from './components/img/img.component';
     RestaurantComponent,
     RestaurantsComponent,
     FooterComponent,
-    ImgComponent
+    ImgComponent,
+    ChatComponent,
+    SubNavComponent,
+    RestaurantPAComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    MatCardModule, 
+    MatTableModule,
+    MatPaginatorModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

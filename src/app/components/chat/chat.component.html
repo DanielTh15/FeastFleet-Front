@@ -1,0 +1,19 @@
+<div class="chat" (click)="toggleMenu()">
+    <div class="fa-solid fa-headset"></div>
+</div>
+
+
+
+<!-- Menú desplegable para el chat -->
+<div class="chat-boot" *ngIf="isMenuOpen">
+    <div (click)="cerrarMenu()" class="close-chat">
+        <div>x</div>
+    </div>
+    <div class="chat-menu" >
+        <!-- Contenido del menú -->
+        <header class="header"> Recomendaciones Gratronomicas</header> 
+        <div class="body-chat">
+            <div></div>
+        </div>     
+    </div>
+</div>

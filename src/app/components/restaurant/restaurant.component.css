@@ -1,172 +1,110 @@
 
-.container {
-    height: 500px;
-    max-width: 1500px;  
-    background-image: url('../../../assets/Publicidad-para-un-restaurante.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    padding: 0;
-}
-
-.back{
-    justify-content: center;
-    text-align: center;
-    height: 100%;
-    padding-top: 100px;
-    background-color: rgba(0, 0, 0, 0.600);
-    margin-left: 0;
-    margin-right: 0;
-    
-}
-
-
-.container .back h2{
-    padding: 20px;
-    font-size: 60px;
-    text-transform: uppercase;
-    color: #fff;
-}
-
-.back p {
-    text-align: justify;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    color: #fff;
-    font-size: 15px;
-    padding-bottom: 10px;
-}
-
-.btn-1 {
-    display: inline-block;
-    padding: 15px 35px;
-    border: 2px solid red;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-right: 20px;
-    border-radius: 50px;
-    background-color: rgba(0, 0, 0, 0.636) ;
-    cursor: pointer;
-}
-
-.btn-1 a{
-    text-decoration: none;
-    color: #fff;
-}
-
-.btn-1:hover {
-    background-color: red;
-    color: rgb(250, 249, 249);
-
-
-}
-
-.slaider-img{
-    width: 50%;
-    margin-left: 30px;
-    background-image: url("../../../assets/photo-1517248135467-4c7edcad34c4.webp");
-}
 
 .restaurantes{
-    max-width: 1200px;
-    width: 100%;
+    max-width: 100%;
+    width: auto;
     margin-left: auto;
     margin-right: auto;
-
     display: flex;
-
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px  0 40px ;
 }
 
-.mostrador{
-    width: 100%;
-    transition: .5s ease;
-}
 
-.mostrador .fila{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-}
-
-.mostrador .fila .item{
-    height: 300px;
-    text-align: center;
-    margin: 0 10px;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: .3s;
-    border: 2px solid;
-}
-
-.mostrador .fila .item:hover{
-    border-color: #f85151;
-    transform: scale(1.1)
-}
-
-.mostrador .fila .item .contenetor-foto {
- 
-    
+.mostrador .item .contenetor-foto {
     padding-bottom: 10px;
+}
+
+.mostrador .item {
+    border-radius: 10px;
+    margin: 10px;
+    width: auto;
+    transition: transform 0.3s ease ;
+  
+}
+
+.mostrador .item:hover {
+    transform: scale(1.05);
+}
+
+.mostrador .item .informacion {
+    padding: 15x;
+    margin-left: 5px;
+    margin-right: 5px;
 
 }
 
-.mostrador .fila .item .contenetor-foto img {
+.mostrador  .item .contenetor-foto img {
     border-radius: 10px 10px 0 0 ;
 }
 
-.mostrador .fila .item:hover{
+.mostrador  .item:hover{
     background-color: #e6e6e6;
 }
 
-.mostrador .fila .item img{
+.mostrador .item img{
     width: 100%;
 }
-
-.mostrador .fila .item .descripcion {
-    color: #707070;
-    font-weight: bold;
-}
-
-.mostrador .fila .item .conten{
+.mostrador .informacion .info-1, .info-2{
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
 }
 
-.mostrador .fila .item .direccion{
-    color: #f85151 ;
-    font-weight: bold;
-
+.mostrador .informacion .info-1 .name {
+    font-weight: 800;
+    font-size: 12px;   
 }
 
-.seleccion{
-    transition: .5s ease;
-    width: 60%;
-    border: 1px solid #ccc;
-    position: relative;
+.mostrador .informacion .info-1 li {
+    color: yellow;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.mostrador .informacion .info-2 {
+    color: grey;
+    font-size: 12px;
+}
+
+
+
+
+
+.seleccion {
+    width: 50%;
+    max-width: 100%; /* Ajusta según tus necesidades */
+    height: 100%;
+    max-height: 800px; /* Ajusta según tus necesidades */
+    border: 2px solid;
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    height: 50%;
-    z-index: 1;
     background-color: #fff;
     transition: opacity .5s ease, width 1s ease;
-    border: 2px solid;
     border-radius: 5px;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 20px; /* Agrega espacio interno al contenedor */
+    z-index: 1;
+    right: 10px;
+    overflow: scroll;
+    bottom: 0;
 }
-
-.info {
+  
+  .info {
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-bottom: 10px;
     box-shadow: 1px;
-}
-
+    width: 100%; /* Ocupa el 100% del ancho del contenedor */
+    height: 100%;
+  }
 .cerrar{
     position: absolute;
     right: 5px;
@@ -288,3 +226,72 @@ transform: scale(1.5);}
     text-transform: uppercase;
 
 }
+
+
+.reserva {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    width: 350px;
+    height: 220px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border-radius: 10px;
+    transition: .5s all;
+}
+.reserva .cerrar-reserva{
+    background: #f85151;
+    z-index: 1;
+    padding: 12px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+ 
+
+}
+.reserva .contenedor {
+ 
+    width: 330px;
+    height:200px ;
+    border: 2px solid red;
+    background: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    text-align: center;
+    z-index: 1;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+}
+
+.reserva .contenedor .comensales input {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.reserva .contenedor .fecha input {
+    margin-bottom: 10px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* fondo semitransparente */
+    z-index: 1000; /* asegúrate de que la superposición esté en la parte superior */
+    pointer-events: auto; /* permite hacer clic en la superposición */
+}
+
+
+

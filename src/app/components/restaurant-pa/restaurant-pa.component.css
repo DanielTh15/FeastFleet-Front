@@ -1,0 +1,14 @@
+table {
+    width: 100%;
+  }
+
+  .container {
+    width: 1300px;
+  }
+  .container p{
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+    margin: 10px;
+  }
+  
