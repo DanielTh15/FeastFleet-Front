@@ -8,45 +8,38 @@
         <mat-card>
           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   
-            <!-- Id Column -->
             <ng-container matColumnDef="restaurantId">
               <th mat-header-cell *matHeaderCellDef> Id </th>
               <td mat-cell *matCellDef="let element"> {{element.restaurantId}} </td>
             </ng-container>
   
-            <!-- Name Column -->
             <ng-container matColumnDef="name">
               <th mat-header-cell *matHeaderCellDef> Name </th>
               <td mat-cell *matCellDef="let element"> {{element.name}} </td>
             </ng-container>
   
-            <!-- Cook Type Column -->
             <ng-container matColumnDef="cookType">
               <th mat-header-cell *matHeaderCellDef> Cook Type </th>
               <td mat-cell *matCellDef="let element"> {{element.cookType}} </td>
             </ng-container>
   
-            <!-- Address Column -->
             <ng-container matColumnDef="address">
               <th mat-header-cell *matHeaderCellDef> Address </th>
               <td mat-cell *matCellDef="let element"> {{element.address}} </td>
             </ng-container>
   
-            <!-- Options Column -->
             <ng-container matColumnDef="options">
                 <th mat-header-cell *matHeaderCellDef> Options </th>
                 <td mat-cell *matCellDef="let element">
                   <button class="btn btn-warning"><span class="fa-solid fa-pen-to-square"></span></button> | 
-                  <button class="btn btn-danger"><span class="fa-solid fa-trash"></span></button>
+                  <button class="btn btn-danger" (click)="deleteRestaurant(element.restaurantId)"><span class="fa-solid fa-trash"></span></button>
                 </td>
               </ng-container>
   
-            <!-- Definición de filas -->
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>
   
-          <!-- Paginador -->
           <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of restaurants">
           </mat-paginator>
         </mat-card>
@@ -56,5 +49,6 @@
   </div>
   
   <div class="tabla">
-    <!-- Puedes agregar contenido adicional aquí si es necesario -->
   </div>
+
+

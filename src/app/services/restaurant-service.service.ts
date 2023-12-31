@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Restaurant } from '../models/restaurant.model';
 
 @Injectable({
@@ -14,6 +14,11 @@ export class RestaurantServiceService {
 
   all(): Observable<Restaurant[]> {
     return this.http.get<Restaurant[]>(this.URLrestaurant + '/all');
+  }
+
+  delete(restaurantId: string): Observable<any>{
+    return this.http.delete<any>(this.URLrestaurant+'/delete/'+ restaurantId);
+
   }
 
 }

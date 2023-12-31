@@ -37,4 +37,11 @@ export class RestaurantPAComponent implements OnInit {
       }
     });
   }
+
+  deleteRestaurant(restaurantId: any){
+    this.service.delete(restaurantId).subscribe(res=>{        
+    this.getAllRestaurant();
+      }
+    )
+  }
 }

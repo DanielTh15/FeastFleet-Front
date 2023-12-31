@@ -11,7 +11,6 @@ const routes: Routes = [
   {path: '', component: SubNavComponent},
   {path: 'login', component: LoginComponent},
   {path: 'admin', component: RestaurantPAComponent},
-  {path: 'restaurant', component: RestaurantComponent},
   {path: 'restaurants', component: RestaurantsComponent}
 
   

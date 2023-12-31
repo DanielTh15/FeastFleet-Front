@@ -1,49 +1,32 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Restaurant } from 'src/app/models/restaurant.model';
-import { RestaurantServiceService } from 'src/app/services/restaurant-service.service';
 
 @Component({
   selector: 'app-restaurant',
-  templateUrl: './restaurant.component.html',
+  template: `
+    <div *ngIf="restaurants && restaurants.length > 0">
+      <h3>Restaurantes en el Componente Hijo:</h3>
+      <div *ngFor="let item of restaurants">
+        {{ item.name }} - {{ item.cookType }}
+      </div>
+    </div>
+    <div *ngIf="!restaurants || restaurants.length === 0">
+      <p>No hay restaurantes disponibles.</p>
+    </div>
+  `,
   styleUrls: ['./restaurant.component.css']
 })
 export class RestaurantComponent implements OnInit {
-
+  @Input() restaurants: Restaurant[] = [];
 
   ngOnInit(): void {
-    console.log(this.restaurants);
-    }
-
-  mostrarInfo = false;
-
-  mostrarReserva = false;
-
-// En el componente hijo (RestaurantComponent)
-@Input() restaurants: Restaurant[] = [];
-
-setRestaurants(restaurants: Restaurant[]) {
-  this.restaurants = restaurants;
-}
-   
-
-  mostrarSeleccion() {
-    this.mostrarInfo = true;
-
+    console.log('Lista de restaurantes en el componente hijo:', this.restaurants);
   }
 
 
-  mostrarFormReserva() {
-    this.mostrarReserva = true;
+
+  updateRestaurants(updatedList: Restaurant[]): void {
+    this.restaurants = updatedList;
+    console.log('Lista de restaurantes actualizada en el componente hijo:', this.restaurants);
   }
-
-  cerrar() {
-    this.mostrarInfo = false;
-
-  }
-
-  cerrarRerseva() {
-    this.mostrarReserva = false;
-  }
-
-
 }

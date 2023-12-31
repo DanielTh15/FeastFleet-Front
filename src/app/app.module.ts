@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { ResenaServiceService } from './services/resena-service.service';
 
 
 @NgModule({
@@ -44,7 +45,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatPaginatorModule
 
   ],
-  providers: [],
+  providers: [  
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

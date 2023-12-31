@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Restaurant } from 'src/app/models/restaurant.model';
 import { RestaurantServiceService } from 'src/app/services/restaurant-service.service';
 import { RestaurantComponent } from '../restaurant/restaurant.component';
@@ -8,27 +8,31 @@ import { RestaurantComponent } from '../restaurant/restaurant.component';
   templateUrl: './restaurants.component.html',
   styleUrls: ['./restaurants.component.css']
 })
-export class RestaurantsComponent implements OnInit {
-
+export class RestaurantsComponent implements OnInit, AfterViewInit {
   listRestaurant: Restaurant[] = [];
-  @ViewChildren(RestaurantComponent) restaurantChildren!: QueryList<RestaurantComponent>;
 
-  constructor(private service: RestaurantServiceService) {}
+
+  constructor(private service: RestaurantServiceService) { }
 
   ngOnInit(): void {
     this.list();
   }
 
+  ngAfterViewInit(): void {
+
+  }
+
   list() {
     this.service.all().subscribe(
       res => {
-        if(res) {
-          this.listRestaurant =res;
-          console.log(this.listRestaurant);
-          this.restaurantChildren.forEach(child => {
-            child.setRestaurants(this.listRestaurant);
-          });
+        if (res) {
+          this.listRestaurant = res;
+          // Resto del código...
         }
-      })
+      },
+      error => {
+        console.error('Error al obtener datos de restaurantes:', error);
+      }
+    );
   }
 }

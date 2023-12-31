@@ -1,0 +1,69 @@
+
+.restaurantes{
+    max-width: 100%;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px  0 40px ;
+}
+
+
+.mostrador .item .contenetor-foto {
+    padding-bottom: 10px;
+}
+
+.mostrador .item {
+    border-radius: 10px;
+    margin: 10px;
+    width: auto;
+    transition: transform 0.3s ease ;
+  
+}
+
+.mostrador .item:hover {
+    transform: scale(1.05);
+}
+
+.mostrador .item .informacion {
+    padding: 15x;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+.mostrador  .item .contenetor-foto img {
+    border-radius: 10px 10px 0 0 ;
+}
+
+.mostrador  .item:hover{
+    background-color: #e6e6e6;
+}
+
+.mostrador .item img{
+    width: 100%;
+}
+.mostrador .informacion .info-1, .info-2{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.mostrador .informacion .info-1 .name {
+    font-weight: 800;
+    font-size: 12px;   
+}
+
+.mostrador .informacion .info-1 li {
+    color: yellow;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.mostrador .informacion .info-2 {
+    color: grey;
+    font-size: 12px;
+}
+
