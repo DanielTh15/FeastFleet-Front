@@ -11,4 +11,8 @@ table {
     text-align: left;
     margin: 10px;
   }
+  .container button {
+    padding: 5px 15px;
+    margin: 8px;
+  }
   

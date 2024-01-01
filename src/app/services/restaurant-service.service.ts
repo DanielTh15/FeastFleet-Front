@@ -16,4 +16,12 @@ export class RestaurantServiceService {
     return this.http.get<Restaurant[]>(this.URLrestaurant + '/all');
   }
 
+  delete(restaurantId: string): Observable<any>{
+    return this.http.delete<any>(this.URLrestaurant + '/delete/'+restaurantId);
+  }
+
+  save(restaurant: Restaurant): Observable<Restaurant>{
+    return this.http.post<Restaurant>(this.URLrestaurant +'/save/', restaurant);
+  }
+
 }
