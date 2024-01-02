@@ -17,8 +17,16 @@ export class RestaurantServiceService {
   }
 
   delete(restaurantId: string): Observable<any>{
+<<<<<<< HEAD
     return this.http.delete<any>(this.URLrestaurant+'/delete/'+ restaurantId);
 
+=======
+    return this.http.delete<any>(this.URLrestaurant + '/delete/'+restaurantId);
+  }
+
+  save(restaurant: Restaurant): Observable<Restaurant>{
+    return this.http.post<Restaurant>(this.URLrestaurant +'/save', restaurant);
+>>>>>>> DanielQ
   }
 
 }

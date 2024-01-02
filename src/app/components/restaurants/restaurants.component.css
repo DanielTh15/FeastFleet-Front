@@ -1,7 +1,13 @@
 
+<<<<<<< HEAD
 .restaurantes{
     max-width: 100%;
     width: auto;
+=======
+
+.restaurantes{
+    width: 100%;
+>>>>>>> DanielQ
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -9,6 +15,12 @@
     justify-content: center;
     padding: 0 40px  0 40px ;
 }
+<<<<<<< HEAD
+=======
+.restaurantes .mostrador {
+    width: 100%;
+}
+>>>>>>> DanielQ
 
 
 .mostrador .item .contenetor-foto {
@@ -17,8 +29,13 @@
 
 .mostrador .item {
     border-radius: 10px;
+<<<<<<< HEAD
     margin: 10px;
     width: auto;
+=======
+    margin: 5px;
+    width: 100%;
+>>>>>>> DanielQ
     transition: transform 0.3s ease ;
   
 }
@@ -34,17 +51,30 @@
 
 }
 
+<<<<<<< HEAD
 .mostrador  .item .contenetor-foto img {
     border-radius: 10px 10px 0 0 ;
 }
+=======
+.mostrador .item .contenetor-foto img {
+    width: 100%;
+    height: 150px; /* Establece un tamaño fijo para todas las imágenes */
+    object-fit: cover; /* Mantiene la relación de aspecto y recorta el exceso */
+    border-radius: 10px 10px 0 0;
+  }
+>>>>>>> DanielQ
 
 .mostrador  .item:hover{
     background-color: #e6e6e6;
 }
 
+<<<<<<< HEAD
 .mostrador .item img{
     width: 100%;
 }
+=======
+
+>>>>>>> DanielQ
 .mostrador .informacion .info-1, .info-2{
     display: flex;
     justify-content: space-between;
@@ -67,3 +97,233 @@
     font-size: 12px;
 }
 
+<<<<<<< HEAD
+=======
+
+
+
+
+.seleccion {
+    width: 50%;
+    max-width: 100%; /* Ajusta según tus necesidades */
+    height: 100%;
+    max-height: 800px; /* Ajusta según tus necesidades */
+    border: 2px solid;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #fff;
+    transition: opacity .5s ease, width 1s ease;
+    border-radius: 5px;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 20px; /* Agrega espacio interno al contenedor */
+    z-index: 1;
+    right: 10px;
+    overflow: scroll;
+    bottom: 0;
+}
+  
+  .info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 10px;
+    box-shadow: 1px;
+    width: 100%; /* Ocupa el 100% del ancho del contenedor */
+    height: 100%;
+  }
+.cerrar{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    transition: transform 0.3s ease;
+
+
+    cursor: pointer;
+    color: rgb(238, 10, 10);
+   
+}
+.cerrar:hover{
+transform: scale(1.5);}
+
+
+.info img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 200px;
+
+}
+.info .btn{
+
+    padding: 15px 15px;
+    margin-right: 20px;
+    border-radius: 50px;
+    background-color: rgba(174, 213, 234, 0.636) ;
+    cursor: pointer;
+}
+
+.info .btn:hover{
+    background: violet;
+}
+
+.info .caja{
+  
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info .caja .columna1 {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: center;
+}
+
+    
+
+.info .caja .columna1 li{
+    text-decoration: none;
+    list-style: none;
+    align-items: center;
+}
+.info .caja .columna2 ul li{
+    list-style: none;
+    text-decoration: none;
+
+}
+
+.info .comentarios{
+    padding-top: 10px;
+    margin: 10px;
+}
+.info .comentarios h3{
+    font-size: 20px;
+    font-weight: 500;
+    border-bottom: 1px solid black;
+}
+.info .comentarios span{
+    color: rgb(0, 0, 0) ;
+}
+.info .comentarios p {
+    text-align: justify;
+    padding: 5px;
+}
+.info .comentarios .ingresar-comentario {
+    border-top: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.info .comentarios .ingresar-comentario input {
+    width: 85%;
+    height: 40px;
+    border-radius: 10px;
+    border: .7px solid;
+    text-align: center;
+}
+
+.info .comentarios .ingresar-comentario button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgb(131, 217, 234);
+    border: none;
+    font-size: 13px;
+   
+}
+
+.info .comentarios .ingresar-comentario button img{
+    width: auto;
+    height: auto;
+}
+
+.info .comentarios .ingresar-comentario button:hover{
+    background: violet;
+
+}
+
+.text {
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+
+.reserva {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    width: 350px;
+    height: 220px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border-radius: 10px;
+    transition: .5s all;
+}
+.reserva .cerrar-reserva{
+    background: #f85151;
+    z-index: 1;
+    padding: 12px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+ 
+
+}
+.reserva .contenedor {
+ 
+    width: 330px;
+    height:200px ;
+    border: 2px solid red;
+    background: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    text-align: center;
+    z-index: 1;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+}
+
+.reserva .contenedor .comensales input {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.reserva .contenedor .fecha input {
+    margin-bottom: 10px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* fondo semitransparente */
+    z-index: 1000; /* asegúrate de que la superposición esté en la parte superior */
+    pointer-events: auto; /* permite hacer clic en la superposición */
+}
+
+
+
+>>>>>>> DanielQ

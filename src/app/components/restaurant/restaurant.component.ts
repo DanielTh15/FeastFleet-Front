@@ -20,7 +20,59 @@ export class RestaurantComponent implements OnInit {
   @Input() restaurants: Restaurant[] = [];
 
   ngOnInit(): void {
+<<<<<<< HEAD
     console.log('Lista de restaurantes en el componente hijo:', this.restaurants);
+=======
+    this.list();
+  }
+
+
+  mostrarInfo = false;
+
+  mostrarReserva = false;
+
+   /* @Input() restaurant: Restaurant = {
+    restaurantId: '',
+    name: '',
+    cookType: '',
+    address: '',
+    description: '',
+    calification: 0,
+    categories: [
+      {
+        category: {
+          id: 0,
+          name: ''
+        }
+      }
+    ]
+  };*/
+
+  mostrarSeleccion() {
+    this.mostrarInfo = true;
+
+  }
+
+
+  mostrarFormReserva() {
+    this.mostrarReserva = true;
+  }
+
+  cerrar() {
+    this.mostrarInfo = false;
+
+  }
+
+  cerrarRerseva() {
+    this.mostrarReserva = false;
+  }
+  list() {
+    this.service.all().subscribe(res => {
+      if (res) {
+        this.listRestaurant = res;
+      }
+    });
+>>>>>>> DanielQ
   }
 
 

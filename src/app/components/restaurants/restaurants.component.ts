@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Restaurant } from 'src/app/models/restaurant.model';
+=======
+import { Component, OnInit } from '@angular/core';
+import { Image, Restaurant } from 'src/app/models/restaurant.model';
+>>>>>>> DanielQ
 import { RestaurantServiceService } from 'src/app/services/restaurant-service.service';
 import { RestaurantComponent } from '../restaurant/restaurant.component';
 
@@ -18,6 +23,7 @@ export class RestaurantsComponent implements OnInit, AfterViewInit {
     this.list();
   }
 
+<<<<<<< HEAD
   ngAfterViewInit(): void {
 
   }
@@ -36,3 +42,45 @@ export class RestaurantsComponent implements OnInit, AfterViewInit {
     );
   }
 }
+=======
+
+  mostrarInfo = false;
+
+  mostrarReserva = false;
+
+
+  mostrarSeleccion() {
+    this.mostrarInfo = true;
+
+  }
+
+
+  mostrarFormReserva() {
+    this.mostrarReserva = true;
+  }
+
+  cerrar() {
+    this.mostrarInfo = false;
+
+  }
+
+  cerrarRerseva() {
+    this.mostrarReserva = false;
+  }
+  list() {
+    this.service.all().subscribe(res => {
+      if (res) {
+        this.listRestaurant = res;
+      }
+    });
+  }
+
+  selectRandomImage(images: Image[]): string {
+    if (images && images.length > 0) {
+      const randomIndex = Math.floor(Math.random() * images.length);
+      return images[randomIndex].imageUrl;
+    }
+    return '../../../assets/imagenDefault.jpg'; // Puedes proporcionar una imagen por defecto o manejar el caso sin imágenes.
+  }
+}
+>>>>>>> DanielQ
