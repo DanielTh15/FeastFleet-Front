@@ -5,60 +5,76 @@
       class="fa-solid fa-floppy-disk"></span></button>
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="overflow-x:auto;">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content" style="overflow-y: auto; max-height: 90vh;">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar Restante</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="">
+          <form action="" (ngSubmit)="save()">
 
             <div class="row">
               <div class="col-6">
                 <label for="" class="form-label">Ingrese Id del restaurante</label>
-                <input type="text" class="form-control" required>
+                <input type="text" class="form-control" [(ngModel)]="restaurantData.restaurantId" name="restaurantId"
+                  required>
               </div>
               <div class="col-6">
                 <label for="" class="form-label">Nombre del restaurante</label>
-                <input type="text" class="form-control" required>
+                <input type="text" class="form-control" [(ngModel)]="restaurantData.name" name="name" required>
               </div>
             </div>
 
             <div class="row">
               <div class="col-6">
                 <label for="" class="form-label">Tipo de cocina</label>
-                <input type="text" class="form-control" required>
+                <input type="text" class="form-control" [(ngModel)]="restaurantData.cookType" name="cookType" required>
               </div>
               <div class="col-6">
                 <label for="" class="form-label">Direccion</label>
-                <input type="text" class="form-control" required>
+                <input type="text" class="form-control" [(ngModel)]="restaurantData.address" name="address" required>
               </div>
             </div>
 
             <div class="row">
               <div class="col-6">
                 <label for="" class="form-label">Descripcion</label>
-                <textarea name="" id="" cols="30" class="form-control" rows="3"></textarea>
+                <textarea [(ngModel)]="restaurantData.description" name="description" id="" cols="30"
+                  class="form-control" rows="3"></textarea>
               </div>
               <div class="col-6">
-                <label for="" class="form-label">Imagenes</label>
-                <input type="file" class="form-control" multiple required>
+                <label for="" class="form-label">Seleccione las categorias</label>
+                <div class="form-check" *ngFor="let cat of listCategory">
+                  <input class="form-check-input" type="checkbox" [value]="cat" id="{{ cat.idCategory }}"
+                    (change)="toggleCategory(cat)">
+                  <label class="form-check-label" for="{{ cat.idCategory }}">
+                    {{ cat.name }}
+                  </label>
+                </div>
               </div>
             </div>
 
             <div class="row">
-              <div class="col-12">
-                <label for="" class="form-label">Seleccione las categorias</label>
+              <div class="col-6">
+                <label for="imageUrls" class="form-label">URLs de Imágenes</label>
+                <input id="imageUrls" type="text" class="form-control" [(ngModel)]="newImageUrl" name="nesciunt">
+                <button type="button" class="btn btn-success" (click)="addImage()">Agregar Imagen</button>
               </div>
-            </div>
 
-            <div class="form-check" *ngFor="let cat of listCategory">
-              <input class="form-check-input" type="checkbox" [value]="cat.name" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">
-               {{cat.name}} 
-              </label>
+              <div class="col-6">
+                <label for="" class="form-label">Imagenes agregadas</label>
+                <ul *ngFor="let img of restaurantData.image" style="max-height: 200px; overflow-y: auto;">
+                  <li>
+                    {{img.imageUrl}}
+                  </li>
+                </ul>
+
+              </div>
+
+
+
             </div>
 
 
@@ -66,7 +82,7 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-info" data-bs-dismiss="modal" (click)="save()">Save</button>
           <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
@@ -78,7 +94,7 @@
     <div class="col-12">
 
       <mat-card>
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
 
           <!-- Id Column -->
           <ng-container matColumnDef="restaurantId">
@@ -102,6 +118,31 @@
           <ng-container matColumnDef="address">
             <th mat-header-cell *matHeaderCellDef> Address </th>
             <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+          </ng-container>
+
+          <!-- Imagenes Column -->
+          <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef> Imagens</th>
+            <td mat-cell *matCellDef="let element">
+              <div class="row container-div">
+                <div class="col-4" *ngFor="let img of element.image">
+                  <img [src]="img.imageUrl" alt="" class="img-fluid mb-2">
+                </div>
+              </div>
+            </td>
+          </ng-container>
+
+
+          <!-- Category Column -->
+          <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef> Categorys</th>
+            <td mat-cell *matCellDef="let element">
+              <ul>
+                <li>
+                  {{viewCategoryNames(element)}}
+                </li>
+              </ul>
+            </td>
           </ng-container>
 
           <!-- Options Column -->

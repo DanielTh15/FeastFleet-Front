@@ -18,12 +18,6 @@ export class RestaurantComponent implements OnInit {
 
   ngOnInit(): void {
     this.list();
-
-
-    this.listRestaurant.forEach(res => {
-      const indice = Math.floor(Math.random() * res.image.length);
-      res.randomImage = res.image[indice].imageUrl;
-    })
   }
 
 
@@ -69,11 +63,7 @@ export class RestaurantComponent implements OnInit {
   list() {
     this.service.all().subscribe(res => {
       if (res) {
-        this.listRestaurant = res.map(item => {
-          // Inicializar propiedades para evitar errores de "undefined"
-          item.randomImage = item.image.length > 0 ? item.image[0].imageUrl : '';
-          return item;
-        });
+        this.listRestaurant = res;
       }
     });
   }

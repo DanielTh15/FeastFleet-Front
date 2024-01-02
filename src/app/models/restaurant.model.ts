@@ -1,30 +1,31 @@
 export interface Restaurant {
-  restaurantId: String;
-  name: String;
-  cookType: String;
-  address: String;
-  description: String;
+  restaurantId: string;
+  name: string;
+  cookType: string;
+  address: string;
+  description: string;
   image: Image[];
   calification: number;
-  categories: Category [];
-  randomImage?: String;
+  categories: { categoryId: number }[];
 }
 
 export interface Category {
   category: {
-    id: number;
+    CategoryId: number;
     name: string;
     description: string;
-  };
+
+
+  }
 }
 
 export interface Image {
-  imageUrl: String;
+  imageUrl: string;
 }
 
 
 
 
-export interface CategoryDTO extends Omit<Category, 'id' | 'description'> {
+export interface CategoryDTO extends Omit<Category, 'id'> {
 
 }

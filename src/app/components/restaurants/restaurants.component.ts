@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Restaurant } from 'src/app/models/restaurant.model';
+import { Image, Restaurant } from 'src/app/models/restaurant.model';
 import { RestaurantServiceService } from 'src/app/services/restaurant-service.service';
 
 @Component({
@@ -17,12 +17,6 @@ export class RestaurantsComponent implements OnInit{
 
   ngOnInit(): void {
     this.list();
-
-
-    this.listRestaurant.forEach(res => {
-      const indice = Math.floor(Math.random() * res.image.length);
-      res.randomImage = res.image[indice].imageUrl;
-    })
   }
 
 
@@ -30,7 +24,6 @@ export class RestaurantsComponent implements OnInit{
 
   mostrarReserva = false;
 
-   
 
   mostrarSeleccion() {
     this.mostrarInfo = true;
@@ -53,15 +46,16 @@ export class RestaurantsComponent implements OnInit{
   list() {
     this.service.all().subscribe(res => {
       if (res) {
-        this.listRestaurant = res.map(item => {
-          // Inicializar propiedades para evitar errores de "undefined"
-          item.randomImage = item.image.length > 0 ? item.image[0].imageUrl : '';
-          return item;
-        });
+        this.listRestaurant = res;
       }
     });
   }
 
-
-    
+  selectRandomImage(images: Image[]): string {
+    if (images && images.length > 0) {
+      const randomIndex = Math.floor(Math.random() * images.length);
+      return images[randomIndex].imageUrl;
+    }
+    return '../../../assets/imagenDefault.jpg'; // Puedes proporcionar una imagen por defecto o manejar el caso sin imágenes.
   }
+}

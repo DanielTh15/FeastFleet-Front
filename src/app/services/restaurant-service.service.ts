@@ -21,7 +21,7 @@ export class RestaurantServiceService {
   }
 
   save(restaurant: Restaurant): Observable<Restaurant>{
-    return this.http.post<Restaurant>(this.URLrestaurant +'/save/', restaurant);
+    return this.http.post<Restaurant>(this.URLrestaurant +'/save', restaurant);
   }
 
 }
