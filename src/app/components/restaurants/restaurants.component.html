@@ -1,148 +1,130 @@
 <div class="text">
-    <h2>All restaurant</h2>
-<<<<<<< HEAD
-=======
-
->>>>>>> DanielQ
+  <h2>All restaurant</h2>
 </div>
+
 <div class="restaurantes">
-    <div class="mostrador" id="mostrador">
-        <div class="row">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let items of listRestaurant">
-<<<<<<< HEAD
-                <div class="item">
-                    <div class="contenetor-foto" *ngIf="items.image != null">
-                        <img [src]="items.randomImage || '../../../assets/imagenDefault.jpg'" alt="">
-=======
-                <div class="item" (click)="mostrarSeleccion()">
-                    <div class="contenetor-foto" >
-                        <img [src]="selectRandomImage(items.image)" alt="">
->>>>>>> DanielQ
-                    </div>
-                    <div class="informacion">
-                        <div class="info-1">
-                            <span class="name">{{items.name}}</span>
-                            <span>
+  <div class="mostrador" id="mostrador">
+      <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let items of listRestaurant">
+              <div class="item" (click)="mostrarSeleccion()">
+                  <div class="contenetor-foto" >
+                      <img [src]="selectRandomImage(items.image)" alt="">
+                  </div>
+                  <div class="informacion">
+                      <div class="info-1">
+                          <span class="name">{{items.name}}</span>
+                          <span>
 
-                                <li class="fa-regular fa-star"></li>
+                              <li class="fa-regular fa-star"></li>
 
-                                {{items.calification}}/5
+                              {{items.calification}}/5
 
-                            </span>
-                        </div>
-                        <div class="info-2">
-                            <span class="direccion">{{items.description}}</span><br>
-                            <span class="tipo-cocina">
-<<<<<<< HEAD
-                                {{items.cookType}}
-=======
-                             {{items.cookType}}
->>>>>>> DanielQ
-                            </span>
-                        </div>
-                    </div>
-                </div>
+                          </span>
+                      </div>
+                      <div class="info-2">
+                          <span class="direccion">{{items.description}}</span><br>
+                          <span class="tipo-cocina">
+                           {{items.cookType}}
+                          </span>
+                      </div>
+                  </div>
+              </div>
 
-            </div>
+          </div>
 
 
-        </div>
+      </div>
 
 
 
-    </div>
+  </div>
 
 
 
-<<<<<<< HEAD
+  <div class="seleccion" *ngIf="mostrarInfo">
+      <div class="cerrar" (click)="cerrar()">
+          &#x2715;
+      </div>
+      <div class="info">
+          <img src="../../../assets/pexels-photo-791810.jpeg" alt="" id="img">
+          <h2 id="modelo">NOMBRE DE RESTAURANTE</h2>
+          <p id="descripcion">Descripcion del restaurante</p>
 
 
-=======
-    <div class="seleccion" *ngIf="mostrarInfo">
-        <div class="cerrar" (click)="cerrar()">
-            &#x2715;
-        </div>
-        <div class="info">
-            <img src="../../../assets/pexels-photo-791810.jpeg" alt="" id="img">
-            <h2 id="modelo">NOMBRE DE RESTAURANTE</h2>
-            <p id="descripcion">Descripcion del restaurante</p>
+          <div class="row caja">
+              <div class="col-6 columna1">
+                  <span for="">Calificacion</span>
+                  <div class="calificacion">
+                      <li class="fa-regular fa-star"></li>
+                      <li class="fa-regular fa-star"></li>
+                      <li class="fa-regular fa-star"></li>
+                      <li class="fa-regular fa-star"></li>
+                      <li class="fa-regular fa-star"></li>
 
-
-            <div class="row caja">
-                <div class="col-6 columna1">
-                    <span for="">Calificacion</span>
-                    <div class="calificacion">
-                        <li class="fa-regular fa-star"></li>
-                        <li class="fa-regular fa-star"></li>
-                        <li class="fa-regular fa-star"></li>
-                        <li class="fa-regular fa-star"></li>
-                        <li class="fa-regular fa-star"></li>
-
-                    </div>
+                  </div>
 
 
 
 
-                </div>
-                <div class="col-6 columna 2">
-                    <span class="categoria">Categorias</span>
-                    <ul>
-                        <li>Categoria 1</li>
-                        <li>Categoria 3</li>
-                    </ul>
+              </div>
+              <div class="col-6 columna 2">
+                  <span class="categoria">Categorias</span>
+                  <ul>
+                      <li>Categoria 1</li>
+                      <li>Categoria 3</li>
+                  </ul>
 
-                </div>
+              </div>
 
-            </div>
-            <button class="btn" (click)="mostrarFormReserva()">Reserva Aqui</button>
+          </div>
+          <button class="btn" (click)="mostrarFormReserva()">Reserva Aqui</button>
 
-            <div class="comentarios">
-                <h3>Comentarios de clientes</h3>
-                <span>Nombre del cliente</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nihil reiciendis voluptates asperiores, aspernatur eum sequi fuga non,
-                    aliquid optio eligendi voluptate necessitatibus veritatis illum.
-                    Consequuntur voluptates nesciunt magni aperiam omnis!</p>
+          <div class="comentarios">
+              <h3>Comentarios de clientes</h3>
+              <span>Nombre del cliente</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Nihil reiciendis voluptates asperiores, aspernatur eum sequi fuga non,
+                  aliquid optio eligendi voluptate necessitatibus veritatis illum.
+                  Consequuntur voluptates nesciunt magni aperiam omnis!</p>
 
-                <div class="ingresar-comentario">
-                    <input type="" placeholder="Ingrese un nuevo comentario">
-                    <button class="guardar"><img src="../../../assets/send.svg" alt=""></button>
-                </div>
+              <div class="ingresar-comentario">
+                  <input type="" placeholder="Ingrese un nuevo comentario">
+                  <button class="guardar"><img src="../../../assets/send.svg" alt=""></button>
+              </div>
 
-            </div>
+          </div>
 
-        </div>
+      </div>
 
-    </div>
+  </div>
 
 
 </div>
 
 <div class="overlay" *ngIf="mostrarReserva">
-    <div class="reserva" *ngIf="mostrarReserva">
-        <div class="contenedor">
-            <div class="cerrar-reserva" (click)="cerrarRerseva()">
+  <div class="reserva" *ngIf="mostrarReserva">
+      <div class="contenedor">
+          <div class="cerrar-reserva" (click)="cerrarRerseva()">
 
-            </div>
-            <span>Realize su reserva</span>
-            <div class="row fecha">
-                <div class="col-6">
-                    <label for="">Ingrese la fecha</label>
-                    <input type="date" name="" id="">
-                </div>
-                <div class="col-6">
-                    <label for="">Ingrese la Hora</label>
-                    <input type="time" name="" id="">
-                </div>
-                <div class="row comensales">
-                    <label for="">Escriba el numero de comesales</label>
-                    <input type="number" name="" id="">
-                </div>
-            </div>
-            <button>Guardar</button>
+          </div>
+          <span>Realize su reserva</span>
+          <div class="row fecha">
+              <div class="col-6">
+                  <label for="">Ingrese la fecha</label>
+                  <input type="date" name="" id="">
+              </div>
+              <div class="col-6">
+                  <label for="">Ingrese la Hora</label>
+                  <input type="time" name="" id="">
+              </div>
+              <div class="row comensales">
+                  <label for="">Escriba el numero de comesales</label>
+                  <input type="number" name="" id="">
+              </div>
+          </div>
+          <button>Guardar</button>
 
-        </div>
+      </div>
 
-    </div>
->>>>>>> DanielQ
+  </div>
 </div>

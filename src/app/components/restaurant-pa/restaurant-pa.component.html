@@ -1,60 +1,167 @@
 <div class="container">
-    <p>Hola, bienvenido ADMIN </p>
-    <p>Aquí administrarás todos los restaurantes</p>
-  
-    <div class="row">
-      <div class="col-12">
-  
-        <mat-card>
-          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  
-            <!-- Id Column -->
-            <ng-container matColumnDef="restaurantId">
-              <th mat-header-cell *matHeaderCellDef> Id </th>
-              <td mat-cell *matCellDef="let element"> {{element.restaurantId}} </td>
-            </ng-container>
-  
-            <!-- Name Column -->
-            <ng-container matColumnDef="name">
-              <th mat-header-cell *matHeaderCellDef> Name </th>
-              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-            </ng-container>
-  
-            <!-- Cook Type Column -->
-            <ng-container matColumnDef="cookType">
-              <th mat-header-cell *matHeaderCellDef> Cook Type </th>
-              <td mat-cell *matCellDef="let element"> {{element.cookType}} </td>
-            </ng-container>
-  
-            <!-- Address Column -->
-            <ng-container matColumnDef="address">
-              <th mat-header-cell *matHeaderCellDef> Address </th>
-              <td mat-cell *matCellDef="let element"> {{element.address}} </td>
-            </ng-container>
-  
-            <!-- Options Column -->
-            <ng-container matColumnDef="options">
-                <th mat-header-cell *matHeaderCellDef> Options </th>
-                <td mat-cell *matCellDef="let element">
-                  <button class="btn btn-warning"><span class="fa-solid fa-pen-to-square"></span></button> | 
-                  <button class="btn btn-danger"><span class="fa-solid fa-trash"></span></button>
-                </td>
-              </ng-container>
-  
-            <!-- Definición de filas -->
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </table>
-  
-          <!-- Paginador -->
-          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of restaurants">
-          </mat-paginator>
-        </mat-card>
-  
+  <p>Hola, bienvenido ADMIN </p>
+  <p>Aquí administrarás todos los restaurantes</p>
+  <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal"><span
+      class="fa-solid fa-floppy-disk"></span></button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="overflow-x:auto;">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content" style="overflow-y: auto; max-height: 90vh;">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar Restante</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" (ngSubmit)="save()">
+
+            <div class="row">
+              <div class="col-6">
+                <label for="" class="form-label">Ingrese Id del restaurante</label>
+                <input type="text" class="form-control" required [(ngModel)]="restaurantData.restaurantId"  name="restaurantId"
+                  >
+              </div>
+              <div class="col-6">
+                <label for="" class="form-label">Nombre del restaurante</label>
+                <input type="text" class="form-control" [(ngModel)]="restaurantData.name" name="name" required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <label for="" class="form-label">Tipo de cocina</label>
+                <input type="text" class="form-control" [(ngModel)]="restaurantData.cookType" name="cookType" required>
+              </div>
+              <div class="col-6">
+                <label for="" class="form-label">Direccion</label>
+                <input type="text" class="form-control" [(ngModel)]="restaurantData.address" name="address" required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <label for="" class="form-label">Descripcion</label>
+                <textarea [(ngModel)]="restaurantData.description" name="description" id="" cols="30"
+                  class="form-control" rows="3"></textarea>
+              </div>
+              <div class="col-6">
+                <label for="" class="form-label">Seleccione las categorias</label>
+                <div class="form-check" *ngFor="let cat of listCategory">
+                  <input class="form-check-input" type="checkbox" [value]="cat" id="{{ cat.idCategory }}"
+                    (change)="toggleCategory(cat)">
+                  <label class="form-check-label" for="{{ cat.idCategory }}">
+                    {{ cat.name }}
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <label for="imageUrls" class="form-label">URLs de Imágenes</label>
+                <input id="imageUrls" type="text" class="form-control" [(ngModel)]="newImageUrl" name="nesciunt">
+                <button type="button" class="btn btn-success" (click)="addImage()">Agregar Imagen</button>
+              </div>
+
+              <div class="col-6">
+                <label for="" class="form-label">Imagenes agregadas</label>
+                <ul *ngFor="let img of restaurantData.image" style="max-height: 200px; overflow-y: auto;">
+                  <li>
+                    {{img.imageUrl}}
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-bs-dismiss="modal" (click)="save()">Save</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
       </div>
     </div>
   </div>
-  
-  <div class="tabla">
-    <!-- Puedes agregar contenido adicional aquí si es necesario -->
+
+
+  <div class="row">
+    <div class="col-12">
+
+      <mat-card>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
+
+          <!-- Id Column -->
+          <ng-container matColumnDef="restaurantId">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.restaurantId}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+          <!-- Cook Type Column -->
+          <ng-container matColumnDef="cookType">
+            <th mat-header-cell *matHeaderCellDef> Cook Type </th>
+            <td mat-cell *matCellDef="let element"> {{element.cookType}} </td>
+          </ng-container>
+
+          <!-- Address Column -->
+          <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef> Address </th>
+            <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+          </ng-container>
+
+          <!-- Imagenes Column -->
+          <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef> Imagens</th>
+            <td mat-cell *matCellDef="let element">
+              <div class="row container-div">
+                <div class="col-6" *ngFor="let img of element.image">
+                  <img [src]="img.imageUrl" alt="" class="img-fluid mb-2">
+                </div>
+              </div>
+            </td>
+          </ng-container>
+
+          <!-- Category Column -->
+          <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef> Categorys</th>
+            <td mat-cell *matCellDef="let element">
+              <ul>
+                <li>
+                  {{viewCategoryNames(element)}}
+                </li>
+              </ul>
+            </td>
+          </ng-container>
+
+          <!-- Options Column -->
+          <ng-container matColumnDef="options">
+            <th mat-header-cell *matHeaderCellDef> Options </th>
+            <td mat-cell *matCellDef="let element">
+              <button class="btn btn-warning"><span class="fa-solid fa-pen-to-square"></span></button> |
+              <button class="btn btn-danger" (click)="deleteRestaurant(element.restaurantId)"><span
+                  class="fa-solid fa-trash"></span></button>
+            </td>
+          </ng-container>
+
+          <!-- Definición de filas -->
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <!-- Paginador -->
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of restaurants">
+        </mat-paginator>
+      </mat-card>
+
+    </div>
   </div>
+</div>
+
+<div class="tabla">
+  <!-- Puedes agregar contenido adicional aquí si es necesario -->
+</div>
