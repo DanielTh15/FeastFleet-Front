@@ -1,0 +1,132 @@
+.login {
+    background: #fff;
+    padding: 0 20px 0 20px;
+}
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.row{
+    width: 900px;
+    height: 500px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.3);
+}
+
+.side-text{
+    background-color: blue;
+    background-image: url("../../../assets/img/pexels-chan-walrus-958545.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    border-radius: 10px 0 0 10px;
+    padding: 0;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: auto;
+    height: 100%;    
+    background-color: rgba(0, 0, 0, 0.534);
+    color: #fff;
+    border-radius: 10px 0 0 10px;
+    font-size: 40px;
+}
+.text .span1{
+    color: orange;
+}
+.text .span2{
+    color: rgb(162, 186, 236);
+}
+
+.rigth {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    position: relative;
+}
+
+.input-box{
+    width: 330px;
+    box-sizing: border-box;
+}
+
+.input-box .tittle{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 50px ;
+
+}
+
+.input-file{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0 10px 0 10px;
+    margin: 20px;
+
+}
+
+.input{
+    height: 45px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(0,0,0,.2);
+    outline: none;
+    margin-bottom: 10px;
+    color: rgb(43, 44, 44);
+    
+
+}
+
+.input-box .input-file label{
+    left: 0;
+    font-size: 15px;
+}
+
+.submit {
+    border: none;
+    height: 45px;
+    outline: none;
+    background: #ed9e9e;
+    border-radius: 5px;
+    transition: .5s;
+    font-size: 18px;
+}
+.submit:hover {
+    background: rgb(138, 138, 245);
+    color: #fff;
+}
+
+.Sign-Up{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Sign-Up a{
+    text-decoration: none;
+    color: blue;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.Sign-Up span {
+    font-size: 18px;
+}
+
+.Sign-Up a:hover{
+    color: #ed9e9e;
+}
+

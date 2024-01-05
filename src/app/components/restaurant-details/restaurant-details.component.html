@@ -1,0 +1,70 @@
+<div class="container">
+    <header class="tittle">
+        Gallery restaurant
+    </header>
+    <div class="container-slaider">
+        <div class="slaider-items" 
+        *ngFor="let img of restaurant.image; 
+        let i = index"
+        [ngClass]="{
+            'selected': i === selectIndex, 
+            'prev': i === selectIndex -1,
+            'next':i === selectIndex +1,
+            'hideleft':i < selectIndex -1,
+            'hideRight':i> selectIndex + 1
+        }"
+        >
+            <img [src]="img.imageUrl" 
+            alt="" class="slaider-img" 
+            (panright)="showPrev(i)"
+            (panleft)="showNext(i)"
+            >
+        </div>
+    </div>
+</div>
+
+
+<div class="container-info">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row px-5">
+                <div class="col-6 text-star">
+                    <h3 class="name">{{restaurant.name}}
+                    </h3>
+                </div>
+                <div class="col-6 text-end">
+                    <p><span class="fa-solid fa-star"></span><b> {{restaurant.calification}}</b>/5</p>
+                </div>
+            </div>
+            <div class="row px-5">
+                <div class="col-6 txt-star">
+                    <p class="description">{{restaurant.description}}</p>
+                </div>
+                <div class="col-6 text-end">
+                    <p><span class="fa-regular fa-comments"></span> (0) </p>
+                </div>
+            </div>
+            <div class="row px-5">
+                <div class="col-6 text-star stars">
+                    <p>{{restaurant.address}}</p>
+                </div>
+                <div class="col-6 text-end">
+                    <p><span class="fa-solid fa-calendar-days"></span> (0) reservations</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="reserva">
+                <header>Make your reservation</header>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="reviwea">
+    <h2>Aqui van las reseñas</h2>
+
+</div>
+
+<router-outlet></router-outlet>
