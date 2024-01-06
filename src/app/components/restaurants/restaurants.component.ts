@@ -42,17 +42,5 @@ export class RestaurantsComponent implements OnInit {
     this.showComponentChildren = true;
     }
 
- 
 
-
-
-  selectRandomImage(images: Image[]): string {
-    if (images && images.length > 0) {
-      const randomIndex = Math.floor(Math.random() * images.length);
-      return images[randomIndex].imageUrl;
-    } else {
-      // Puedes proporcionar una imagen por defecto o manejar el caso sin imágenes.
-      return '../../../assets/imagenDefault.jpg';
-    }
-  }
 }

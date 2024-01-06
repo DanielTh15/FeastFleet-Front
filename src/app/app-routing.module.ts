@@ -6,16 +6,23 @@ import { SubNavComponent } from './components/sub-nav/sub-nav.component';
 import { RestaurantComponent } from './components/restaurant/restaurant.component';
 import { RestaurantsComponent } from './components/restaurants/restaurants.component';
 import { RestaurantDetailsComponent } from './components/restaurant-details/restaurant-details.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 const routes: Routes = [
   { path: '', component: SubNavComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: RestaurantPAComponent },
   { path: 'restaurants', component: RestaurantsComponent },
-  { path: 'restaurant', component: RestaurantComponent, children:[
-    { path: 'restaurant-detail', component: RestaurantDetailsComponent },
+  {
+    path: 'restaurant', component: RestaurantComponent, children: [
+      { path: 'restaurant-detail', component: RestaurantDetailsComponent },
 
-  ]},
+    ],
+  },
+
+  { path: 'slider', component: SliderComponent },
+
+
 ]
 
 @NgModule({

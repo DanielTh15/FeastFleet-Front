@@ -20,6 +20,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
 import { RestaurantDetailsComponent } from './components/restaurant-details/restaurant-details.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 
 
@@ -36,6 +37,7 @@ import { RestaurantDetailsComponent } from './components/restaurant-details/rest
     SubNavComponent,
     RestaurantPAComponent,
     RestaurantDetailsComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,

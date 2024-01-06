@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./sub-nav.component.css']
 })
 export class SubNavComponent {
+  currentIndex = 0;
+  cardItems = [
+    // ... tus datos
+  ];
+
+  showSlide(direction: number) {
+    const totalItems = this.cardItems.length;
+    this.currentIndex = (this.currentIndex + direction + totalItems) % totalItems;
+  }
 
 }

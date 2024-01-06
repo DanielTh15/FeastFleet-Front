@@ -1,22 +1,161 @@
-<div class="container">
-    <div class="back">
-        <h2><span style="color: orange;">Feast</span>-Fleet</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem praesentium ea quibusdam molestias.
-            Eum,
-            obcaecati ad! Fuga nobis inventore facere veritatis ipsam ab dignissimos necessitatibus, quaerat saepe illum
-            laudantium molestiae!</p>
-        <div class="botones">
-            <div class="btn-1">
-                <a href="#">Make your reservation</a>
-            </div>
-            <div class="btn-1">
-                <a href="#">view all restaurant</a>
+<section>
 
-            </div>
+    <div class="container">
+        <div class="back">
+            <h2> <Span style="color: rgb(179, 209, 227);">WELCOME TO </Span><span
+                    style="color: orange;">Feast</span>-Fleet</h2>
+            <p> Descubre experiencias gastronómicas excepcionales y reserva tu mesa con facilidad. Explora una variedad
+                de
+                restaurantes, desde sabores clásicos hasta innovadoras creaciones culinarias. Tu próxima deliciosa
+                experiencia comienza aquí. ¡Reserva ahora y disfruta de momentos memorables en cada bocado!</p>
+
         </div>
     </div>
 
+</section>
+
+
+<section class="list-items">
+    <header>
+        <h3>most searched restaurants</h3>
+    </header>
+
+    <div class="container-items">
+        <div class="slaider-items">
+            <div class="slaider-main" [style.transform]="'translateX(' + (-currentIndex * 100) + '%)'">
+
+                <div class="card-items">
+                    <div class="contenetor-foto">
+                        <img src="../../../assets/imagenDefault.jpg" alt="">
+                    </div>
+                    <div class="informacion">
+                        <div class="info-1">
+                            <span class="name">DSJFF</span>
+                            <span>
+
+                                <li class="fa-regular fa-star"></li>
+
+                                DKJFKF/5
+
+                            </span>
+                        </div>
+                        <div class="info-2">
+                            <span class="direccion">FSJKFLF</span><br>
+                            <span class="tipo-cocina">
+                                HDKJSFKF
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card-items">
+                    <div class="contenetor-foto">
+                        <img src="../../../assets/imagenDefault.jpg" alt="">
+                    </div>
+                    <div class="informacion">
+                        <div class="info-1">
+                            <span class="name">DSJFF</span>
+                            <span>
+
+                                <li class="fa-regular fa-star"></li>
+
+                                DKJFKF/5
+
+                            </span>
+                        </div>
+                        <div class="info-2">
+                            <span class="direccion">FSJKFLF</span><br>
+                            <span class="tipo-cocina">
+                                HDKJSFKF
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-items">
+                    <div class="contenetor-foto">
+                        <img src="../../../assets/imagenDefault.jpg" alt="">
+                    </div>
+                    <div class="informacion">
+                        <div class="info-1">
+                            <span class="name">DSJFF</span>
+                            <span>
+
+                                <li class="fa-regular fa-star"></li>
+
+                                DKJFKF/5
+
+                            </span>
+                        </div>
+                        <div class="info-2">
+                            <span class="direccion">FSJKFLF</span><br>
+                            <span class="tipo-cocina">
+                                HDKJSFKF
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-items">
+                    <div class="contenetor-foto">
+                        <img src="../../../assets/imagenDefault.jpg" alt="">
+                    </div>
+                    <div class="informacion">
+                        <div class="info-1">
+                            <span class="name">DSJFF</span>
+                            <span>
+
+                                <li class="fa-regular fa-star"></li>
+
+                                DKJFKF/5
+
+                            </span>
+                        </div>
+                        <div class="info-2">
+                            <span class="direccion">FSJKFLF</span><br>
+                            <span class="tipo-cocina">
+                                HDKJSFKF
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-items">
+                    <div class="contenetor-foto">
+                        <img src="../../../assets/imagenDefault.jpg" alt="">
+                    </div>
+                    <div class="informacion">
+                        <div class="info-1">
+                            <span class="name">DSJFF</span>
+                            <span>
+
+                                <li class="fa-regular fa-star"></li>
+
+                                DKJFKF/5
+
+                            </span>
+                        </div>
+                        <div class="info-2">
+                            <span class="direccion">FSJKFLF</span><br>
+                            <span class="tipo-cocina">
+                                HDKJSFKF
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="button">
+                <button type="button" (click)="showSlide(- 1)" class="next"><span class="fa-solid fa-chevron-right"></span></button>
+                <button type="button" (click)="showSlide(+ 1)" class="prev"><span class="fa-solid fa-chevron-left"></span></button>
+            </div>
 
 
 
-</div>
+        </div>
+
+    </div>
+
+</section>
