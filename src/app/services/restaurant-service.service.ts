@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+<<<<<<< HEAD
 import { BehaviorSubject, Observable, catchError, throwError } from 'rxjs';
+=======
+import { Observable, catchError, throwError } from 'rxjs';
+>>>>>>> 4336b708d84b81430a5c224cbfb6a430860c3512
 import { Restaurant } from '../models/restaurant.model';
 
 @Injectable({
@@ -10,8 +14,11 @@ export class RestaurantServiceService {
 
   private URLrestaurant = 'http://localhost:8080/FeastFleet/api/restaurant'
 
+<<<<<<< HEAD
   
 
+=======
+>>>>>>> 4336b708d84b81430a5c224cbfb6a430860c3512
   constructor(private http: HttpClient) { }
 
   all(): Observable<Restaurant[]> {
@@ -29,9 +36,12 @@ export class RestaurantServiceService {
   }
 
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 4336b708d84b81430a5c224cbfb6a430860c3512
   private handleError(error: HttpErrorResponse): Observable<any> {
     let errorMessage = 'Hubo un error al procesar la solicitud.';
 

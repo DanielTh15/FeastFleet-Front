@@ -85,57 +85,59 @@ export class RestaurantPAComponent implements OnInit {
     this.service.save(this.restaurantData).subscribe(res => {
       if (res) {
         Swal.fire('Ok', 'Restaurant saved', 'success')
-                
+
         this.getAllRestaurant();
-        
+
       }
     },
       (error) => {
         Swal.fire('Eror', error, 'error')
-        this.errorMessage = error;
+        alert("Restaurant is saved");
+        this.getAllRestaurant();
       }
     );
-}
 
-addImage() {
-  if (this.newImageUrl.trim() !== '') {
-    const newImage: Image = { imageUrl: this.newImageUrl };
-    this.restaurantData.image.push(newImage);
-    this.newImageUrl = ''; // Limpia la variable después de agregarla
-  }
-}
-
-
-toggleCategory(category: CategoryModel) {
-  const index = this.restaurantData.categories.findIndex(cat => cat.categoryId === category.idCategory);
-
-  if (index !== -1) {
-    // Si la categoría ya está en la lista, la eliminamos
-    this.restaurantData.categories.splice(index, 1);
-  } else {
-    // Si la categoría no está en la lista, la agregamos
-    this.restaurantData.categories.push({ categoryId: category.idCategory });
-  }
-}
-
-isCategorySelected(category: CategoryModel): boolean {
-  // Verificamos si la categoría está seleccionada
-  return this.restaurantData.categories.some(cat => cat.categoryId === category.idCategory);
-}
-
-viewCategoryNames(restaurant: Restaurant): string[] {
-  // Verificar si el restaurante tiene categorías
-  if (restaurant && restaurant.categories.length > 0) {
-    // Obtener los nombres de las categorías basado en el categoryId
-
-    const categoryNames: string[] = restaurant.categories
-      .map(cat => this.listCategory.find(category => category.idCategory === cat.categoryId)?.name || '');
-
-    return categoryNames;
   }
 
-  return [];
-}
+  addImage() {
+    if (this.newImageUrl.trim() !== '') {
+      const newImage: Image = { imageUrl: this.newImageUrl };
+      this.restaurantData.image.push(newImage);
+      this.newImageUrl = ''; // Limpia la variable después de agregarla
+    }
+  }
+
+
+  toggleCategory(category: CategoryModel) {
+    const index = this.restaurantData.categories.findIndex(cat => cat.categoryId === category.idCategory);
+
+    if (index !== -1) {
+      // Si la categoría ya está en la lista, la eliminamos
+      this.restaurantData.categories.splice(index, 1);
+    } else {
+      // Si la categoría no está en la lista, la agregamos
+      this.restaurantData.categories.push({ categoryId: category.idCategory });
+    }
+  }
+
+  isCategorySelected(category: CategoryModel): boolean {
+    // Verificamos si la categoría está seleccionada
+    return this.restaurantData.categories.some(cat => cat.categoryId === category.idCategory);
+  }
+
+  viewCategoryNames(restaurant: Restaurant): string[] {
+    // Verificar si el restaurante tiene categorías
+    if (restaurant && restaurant.categories.length > 0) {
+      // Obtener los nombres de las categorías basado en el categoryId
+
+      const categoryNames: string[] = restaurant.categories
+        .map(cat => this.listCategory.find(category => category.idCategory === cat.categoryId)?.name || '');
+
+      return categoryNames;
+    }
+
+    return [];
+  }
 
 
 }

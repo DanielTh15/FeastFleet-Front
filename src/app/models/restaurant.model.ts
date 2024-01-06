@@ -14,6 +14,11 @@ export interface Category {
     CategoryId: number;
     name: string;
     description: string;
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 4336b708d84b81430a5c224cbfb6a430860c3512
   }
 }
 
