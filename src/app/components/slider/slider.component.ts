@@ -29,7 +29,8 @@ export class SliderComponent implements AfterViewInit{
         640: {
           slidesPerView: 4,
           spaceBetween: 40
-        }
+        },
+        
       }
     })
     

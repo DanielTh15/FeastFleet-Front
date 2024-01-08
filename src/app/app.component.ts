@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
 import { Restaurant } from './models/restaurant.model';
-=======
->>>>>>> 4336b708d84b81430a5c224cbfb6a430860c3512
 
 @Component({
   selector: 'app-root',
@@ -10,7 +7,6 @@ import { Restaurant } from './models/restaurant.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-<<<<<<< HEAD
   viewRestaurant = false;
   selectedRestaurant: Restaurant | null = null;
 
@@ -25,7 +21,4 @@ export class AppComponent {
     this.viewRestaurant = true;
     this.selectedRestaurant = null;
   }
-=======
-  title = 'FeastFleet';
->>>>>>> 4336b708d84b81430a5c224cbfb6a430860c3512
 }

@@ -1,13 +1,8 @@
-<<<<<<< HEAD
-.container {
-    height: 400px;
-    max-width: 1500px;
-=======
+
 
 .container {
     height: 500px;
     max-width: 1500px;  
->>>>>>> 4336b708d84b81430a5c224cbfb6a430860c3512
     background-image: url('../../../assets/Publicidad-para-un-restaurante.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -17,11 +12,7 @@
 
 
 
-<<<<<<< HEAD
-.back {
-=======
 .back{
->>>>>>> 4336b708d84b81430a5c224cbfb6a430860c3512
     justify-content: center;
     text-align: center;
     height: 100%;
@@ -29,42 +20,24 @@
     background-color: rgba(0, 0, 0, 0.600);
     margin-left: 0;
     margin-right: 0;
-<<<<<<< HEAD
 
-}
-
-
-.container .back h2 {
-    padding: 20px;
-    font-size: 50px;
-=======
-    
 }
 
 
 .container .back h2{
     padding: 20px;
     font-size: 60px;
->>>>>>> 4336b708d84b81430a5c224cbfb6a430860c3512
     text-transform: uppercase;
     color: #fff;
 }
 
 .back p {
     text-align: justify;
-<<<<<<< HEAD
     width: 80%;
     margin-left: auto;
     margin-right: auto;
     color: #fff;
     font-size: 20px;
-=======
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    color: #fff;
-    font-size: 15px;
->>>>>>> 4336b708d84b81430a5c224cbfb6a430860c3512
     padding-bottom: 10px;
 }
 
@@ -77,22 +50,14 @@
     text-transform: uppercase;
     margin-right: 20px;
     border-radius: 50px;
-<<<<<<< HEAD
-    background-color: rgba(0, 0, 0, 0.636);
-    cursor: pointer;
 }
 
+
 .btn-1 a {
-=======
     background-color: rgba(0, 0, 0, 0.636) ;
     cursor: pointer;
 }
 
-.btn-1 a{
->>>>>>> 4336b708d84b81430a5c224cbfb6a430860c3512
-    text-decoration: none;
-    color: #fff;
-}
 
 .btn-1:hover {
     background-color: red;
@@ -101,131 +66,7 @@
 
 }
 
-<<<<<<< HEAD
-.container-items{
-    width: 95%;
-    text-align: center;
-    margin: auto;
-}
-
-.slaider-items {
-    position: relative;
-    overflow: hidden;
-    height: 300px;
-
-}
-
-.slaider-main{
-    position: absolute;
-    height: 100%;
-    white-space: nowrap; /* Ensure cards stay in the same row */
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-
-.slaider-img {
-    width: 50%;
-    margin-left: 30px;
-    background-image: url("../../../assets/photo-1517248135467-4c7edcad34c4.webp");
-}
-
-
-.card-items {
-   display: inline-block;
-   width: 292px;
-   height: 250px;
-   background-color: #ede1e1;
-   border-radius: 20px;
-   margin: 15px;
-   position: relative;
-   z-index: 0;
-
-
-}
-
-.card-items:hover {
-    transform: scale(1.05);
-}
-
-.card-items .informacion {
-    padding: 15x;
-    margin-left: 5px;
-    margin-right: 5px;
-
-}
-
-.card-items .contenetor-foto img {
-    width: 100%;
-    height: 150px;
-    /* Establece un tamaño fijo para todas las imágenes */
-    object-fit: cover;
-    /* Mantiene la relación de aspecto y recorta el exceso */
-    border-radius: 10px 10px 0 0;
-}
-
-
-.card-items:hover {
-    background-color: #e6e6e6;
-}
-
-
-
-
-.card-items .informacion .info-1,
-.info-2 {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-}
-
-.card-items .informacion .info-1 .name {
-    font-weight: 800;
-    font-size: 12px;
-}
-
-.card-items .informacion .info-1 li {
-    color: yellow;
-    font-size: 12px;
-    font-weight: 800;
-}
-
-.card-items .informacion .info-2 {
-    color: grey;
-    font-size: 12px;
-}
-
-.next {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translate(-50% -50%);
-    border: none;
-    font-size: 40px;
-    font-weight: 400;
-    background: transparent;
-    color: #000000;
-    z-index: 1;
-}
-
-.prev {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translate(-50% -50%);
-    border: none;
-    font-size: 40px;
-    font-weight: 400;
-    background: transparent;
-    color: #000000;
-    z-index: 1;
-=======
-.slaider-img{
-    width: 50%;
-    margin-left: 30px;
-    background-image: url("../../../assets/photo-1517248135467-4c7edcad34c4.webp");
->>>>>>> 4336b708d84b81430a5c224cbfb6a430860c3512
+.list-items{
+    padding-left: 40px;
+    padding-right: 40px;
 }

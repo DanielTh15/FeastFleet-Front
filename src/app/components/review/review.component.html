@@ -1,0 +1,58 @@
+<section>
+    <div class="review-user">
+        <div class="user-view">
+            <div class="user">
+                <span class="fa-regular fa-user"></span>
+            </div>
+            <p><span class="fa-solid fa-star"></span>
+                Califica y Opiona</p>
+            <p>Comparte tu experiencia con la comunidad</p>
+            <div>
+                <button (click)="wiewReview()" class="button-write">Write a Review <span
+                        class="fa-regular fa-pen-to-square">
+                    </span></button>
+            </div>
+        </div>
+
+        <div class="container-review">
+            <div class="write-review" *ngIf="showBoxSendReviee">
+                <form (ngSubmit)="save()">
+                    <div class="calification">
+                        <label for="qualification">Ingrese la calificacion</label>
+                        <input type="number" [(ngModel)]="reviewData.qualification" name="qualification">
+
+                    </div>
+                    <input [(ngModel)]="reviewData.comment" name="comment" class="input" type="text"
+                        placeholder="Escriba su reseña" name="" id="">
+                    <button type="submit" class="send-review">Pusblicar Reseña</button>
+                </form>
+
+            </div>
+            <div class="review" >
+                <div class="row" *ngFor="let review of listReviwe">
+                    <div class="col-2" style="width: 60px;">
+                        <div class="user-perfil">
+                            <div>
+                                DQ
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-8">
+                        <div class="user-info">
+                            <p>Nombre del Usuario</p>
+                            <p><span></span>Cliente</p>
+                            <p>{{review.comment}}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-2 text-end">
+                        <p><span class="fa-solid fa-star"></span>{{review.qualification}}</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>

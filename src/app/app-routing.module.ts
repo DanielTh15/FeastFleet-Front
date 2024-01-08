@@ -7,12 +7,15 @@ import { RestaurantComponent } from './components/restaurant/restaurant.componen
 import { RestaurantsComponent } from './components/restaurants/restaurants.component';
 import { RestaurantDetailsComponent } from './components/restaurant-details/restaurant-details.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { ReviewComponent } from './components/review/review.component';
 
 const routes: Routes = [
   { path: '', component: SubNavComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: RestaurantPAComponent },
   { path: 'restaurants', component: RestaurantsComponent },
+  { path: 'review', component: ReviewComponent },
+
   {
     path: 'restaurant', component: RestaurantComponent, children: [
       { path: 'restaurant-detail', component: RestaurantDetailsComponent },

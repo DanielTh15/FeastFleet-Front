@@ -15,10 +15,8 @@
     right: 20px;
     border: 2px solid;
     transition: transform 0.3s ease; /* Agregamos transición al efecto hover */
-<<<<<<< HEAD
     z-index: 100;
-=======
->>>>>>> 4336b708d84b81430a5c224cbfb6a430860c3512
+
   }
   
   .chat:hover {
@@ -36,10 +34,8 @@
     align-items: center;
     justify-content: center;
     background: transparent;
-<<<<<<< HEAD
     z-index: 101;
-=======
->>>>>>> 4336b708d84b81430a5c224cbfb6a430860c3512
+
 
     transition: opacity 0.2s ease; /* Agregamos transición a la opacidad */
   }

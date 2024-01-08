@@ -1,7 +1,6 @@
-
 .container-slaider {
     position: relative;
-    width: 75%;
+    width: 70%;
     height: 100%;
     margin: auto;
 
@@ -19,14 +18,14 @@
             left: 0;
             top: 0;
             width: 100%;
+            /* Make the image responsive */
             height: 100%;
+            /* Maintain aspect ratio */
             box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
             transition: 500ms cubic-bezier(0.17, 0.67, 0.55, 1.43);
             transform: scale(0);
             opacity: 0;
             border-radius: 15px;
-
-
         }
 
         &.hideleft {
@@ -35,8 +34,10 @@
             }
 
         }
-        &.prev{
+
+        &.prev {
             z-index: 1;
+
             .slaider-img {
                 opacity: 0.8;
                 transform: translateX(-40%) scale(0.8);
@@ -45,6 +46,7 @@
 
         &.selected {
             z-index: 2;
+
             .slaider-img {
                 opacity: 1;
                 transform: translateX(0%) scale(1);
@@ -53,8 +55,9 @@
 
         }
 
-        &.next{
+        &.next {
             z-index: 1;
+
             .slaider-img {
                 opacity: 0.8;
                 transform: translateX(45%) scale(0.8);
@@ -72,9 +75,21 @@
 }
 
 
+@media only screen and (max-width: 768px) {
+    .container-slaider{
+        width: 70%;
+        height: 70%;
+    }
+
+    .container .tittle{
+        font-size: 15px;
+
+    }
+}
+
 .container {
     height: 300px;
-    width: 600px;
+    width: 60%;
     margin-bottom: 80px;
     margin-top: 20px;
     display: flex;
@@ -82,7 +97,7 @@
     align-items: center;
     flex-direction: column;
 
-    .tittle{
+    .tittle {
         font-size: 30px;
         margin: 20px;
         font-weight: 800;
