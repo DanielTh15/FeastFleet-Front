@@ -12,12 +12,13 @@ imgDefault: string = './assets/img/default.png';
 
 @Output() loaded = new EventEmitter<string>();
 
-imgErrorLoad(){
+imgError() {
   this.img = this.imgDefault;
+
 }
 
-imgLoaded(){
-  this.loaded.emit(this.img)
+imgLoaded() {
+  this.loaded.emit(this.img);
 }
 
 }

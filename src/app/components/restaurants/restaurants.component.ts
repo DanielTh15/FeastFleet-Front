@@ -11,8 +11,8 @@ export class RestaurantsComponent implements OnInit {
 
   selectedRestaurant!: Restaurant;
 
-  viewComponenteFather:boolean = true;
-  showComponentChildren:boolean = false;
+  viewComponenteFather: boolean = true;
+  showComponentChildren: boolean = false;
 
   listRestaurant: Restaurant[] = [];
 
@@ -31,7 +31,7 @@ export class RestaurantsComponent implements OnInit {
     this.service.all().subscribe(res => {
       if (res) {
         this.listRestaurant = res;
-        // Hacer la modificación después de que Angular haya completado su ciclo de detección de cambios.
+        console.log(res);
       }
     });
   }
@@ -40,7 +40,7 @@ export class RestaurantsComponent implements OnInit {
     console.log(this.selectedRestaurant);
     this.viewComponenteFather = false;
     this.showComponentChildren = true;
-    }
+  }
 
 
 }

@@ -12,7 +12,7 @@ export class ReviewComponent implements OnChanges, OnInit {
 
   reviewData: Review = {
     reviewId: 0,
-    userId: '',
+    customerId: '',
     restaurantId: '',
     comment: '',
     qualification: 0
@@ -46,11 +46,12 @@ export class ReviewComponent implements OnChanges, OnInit {
   }
 
   save() {
+    this.reviewData.customerId = this.idCliente;
+    this.reviewData.restaurantId = this.idRestaurant;
     this.service.save(this.reviewData).subscribe(res => {
       if (res) {
-        this.reviewData.userId = this.idCliente;
-        this.idRestaurant = this.idRestaurant;
         console.log('Reseña guardada exitosamente');
+        this.All();
       }
     });
   }

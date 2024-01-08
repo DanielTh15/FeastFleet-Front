@@ -1,8 +1,8 @@
 export interface Review{
   reviewId: number;
-  userId: String;
-  restaurantId: String;
-  comment: String;
+  customerId: string;
+  restaurantId: string;
+  comment: string;
   qualification: number;
 
 }

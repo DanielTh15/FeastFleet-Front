@@ -22,13 +22,17 @@
                         <input type="number" [(ngModel)]="reviewData.qualification" name="qualification">
 
                     </div>
-                    <input [(ngModel)]="reviewData.comment" name="comment" class="input" type="text"
-                        placeholder="Escriba su reseña" name="" id="">
+                    <input  [(ngModel)]="reviewData.comment" name="comment" class="form-control" type="text"
+                        placeholder="Escriba su reseña">
                     <button type="submit" class="send-review">Pusblicar Reseña</button>
                 </form>
 
             </div>
             <div class="review" >
+
+                <div class="review-info-avalaible" *ngIf="listReviwe.length==0">
+                    <p>Reviews is no avalaible</p>
+                </div>
                 <div class="row" *ngFor="let review of listReviwe">
                     <div class="col-2" style="width: 60px;">
                         <div class="user-perfil">

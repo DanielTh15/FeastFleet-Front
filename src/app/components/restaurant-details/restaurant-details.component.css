@@ -108,13 +108,13 @@
 
 
 .container-info .name {
-    font-size: 18px;
+    font-size: 30px;
     font-weight: 800;
 }
 
 .fa-solid.fa-star {
     color: yellow;
-    font-size: 18px;
+    font-size: 25px;
 }
 
 .fa-regular.fa-comments {

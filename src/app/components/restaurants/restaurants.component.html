@@ -9,8 +9,8 @@
             <div class="row">
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let items of listRestaurant; let i = index">
                     <div class="item" (click)="selectRestautant(items)">
-                        <div class="contenetor-foto">
-                            <img [src]="items.image" alt="">
+                        <div class="contenetor-foto" >
+                            <app-img *ngIf="items.image.length > 0 " [img]="items.image[0].imageUrl" ></app-img>
                         </div>
                         <div class="informacion">
                             <div class="info-1">
