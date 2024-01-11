@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { BehaviorSubject, Observable, catchError, throwError } from 'rxjs';
+import {  Observable, catchError, throwError } from 'rxjs';
 import { Restaurant } from '../models/restaurant.model';
 
 @Injectable({

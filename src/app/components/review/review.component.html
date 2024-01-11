@@ -4,7 +4,7 @@
             <div class="user">
                 <span class="fa-regular fa-user"></span>
             </div>
-            <p><span class="fa-solid fa-star"></span>
+            <p class="span"><span class="fa-solid fa-star"></span>
                 Califica y Opiona</p>
             <p>Comparte tu experiencia con la comunidad</p>
             <div>
@@ -22,37 +22,67 @@
                         <input type="number" [(ngModel)]="reviewData.qualification" name="qualification">
 
                     </div>
-                    <input  [(ngModel)]="reviewData.comment" name="comment" class="form-control" type="text"
+                    <input [(ngModel)]="reviewData.comment" name="comment" class="form-control" type="text"
                         placeholder="Escriba su reseña">
-                    <button type="submit" class="send-review">Pusblicar Reseña</button>
+                    <button type="submit" class="send-review">Publicar Reseña</button>
                 </form>
 
             </div>
-            <div class="review" >
 
-                <div class="review-info-avalaible" *ngIf="listReviwe.length==0">
-                    <p>Reviews is no avalaible</p>
-                </div>
-                <div class="row" *ngFor="let review of listReviwe">
+            <div class="info-avalaible" *ngIf="listReviwe.length==0">
+                <p>Reviews is no avalaible</p>
+
+            </div>
+
+            <div class="review" *ngFor="let review of listReviwe"
+            (mouseover)="showInformationDeleteAndUpdate(review.customerId)">
+
+                <div class="row">
                     <div class="col-2" style="width: 60px;">
                         <div class="user-perfil">
                             <div>
-                                DQ
+                                {{review.customer?.name?.charAt(0)}}{{review.customer?.lastName?.charAt(0)}}
+
                             </div>
                         </div>
                     </div>
 
                     <div class="col-8">
                         <div class="user-info">
-                            <p>Nombre del Usuario</p>
-                            <p><span></span>Cliente</p>
+                            <p class="name-user">{{review.customer?.name}} {{review.customer?.lastName}}</p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="comment-info"> <span class="fa-regular fa-comments"></span><strong>
+                                        {{review.customer?.totalReviews}}</strong>
+                                        comentarios
+
+                                    </p>
+
+                                </div>
+
+                                <div class="col-6">
+                                    <p class="reservation-info"><span
+                                            class="fa-regular fa-calendar-days"></span><strong> 3 </strong>
+                                        reservas
+
+                                    </p>
+
+                                </div>
+
+                            </div>
                             <p>{{review.comment}}</p>
                         </div>
                     </div>
 
                     <div class="col-2 text-end">
-                        <p><span class="fa-solid fa-star"></span>{{review.qualification}}</p>
+                        <p class="qualification"><span class="fa-solid fa-star"></span>{{review.qualification}}</p>
                     </div>
+                </div>
+
+                <div class="view-info-adtn" *ngIf="currentReviewId === idCliente">
+                    <a class="delete" type="submit" (click)="delete(review.reviewId)">Eliminar resena</a>
+                    <a class="edit" type="submit" (click)="updateReview(review.reviewId)">Editar resena</a>
+
                 </div>
 
 

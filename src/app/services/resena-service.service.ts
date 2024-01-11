@@ -20,4 +20,20 @@ export class ResenaServiceService {
   save(review: Review):Observable<Review> {
     return this.http.post<Review>(this.URLrestaurant + '/save', review);
   }
+
+
+  AllByCustomer(customerId: string):Observable<Review[]> {
+    return this.http.get<Review[]>(this.URLrestaurant + '/getAllbyCustomer/' + customerId);
+  }
+
+  All():Observable<Review[]>{
+    return this.http.get<Review[]>(this.URLrestaurant + '/All');
+  }
+  delete(idReview: number):Observable<any>{
+    return this.http.delete<any>(this.URLrestaurant + '/delete/'+ idReview);
+  }
+
+  getById(reviewId: number):Observable<any>{
+    return this.http.get<any>(this.URLrestaurant + '/getById/' + reviewId);
+  }
 }

@@ -22,6 +22,8 @@ import { FormsModule } from '@angular/forms';
 import { RestaurantDetailsComponent } from './components/restaurant-details/restaurant-details.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { ReviewComponent } from './components/review/review.component';
+import { CustomerComponent } from './components/customer/customer.component';
+import { ReservationComponent } from './components/reservation/reservation.component';
 
 
 
@@ -40,6 +42,8 @@ import { ReviewComponent } from './components/review/review.component';
     RestaurantDetailsComponent,
     SliderComponent,
     ReviewComponent,
+    CustomerComponent,
+    ReservationComponent,
   ],
   imports: [
     BrowserModule,
